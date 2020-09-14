@@ -13,7 +13,7 @@
 ## Test commands 
 - go test
 - go test –v 
-- go test –run  <TestName>
+- go test –run  "<TestName>"
 
 ## Coverage commands &  Visualization 
 - go test –cover
