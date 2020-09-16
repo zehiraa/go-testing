@@ -42,10 +42,10 @@
 - stretchr/testify  one of the most popular go testing library (link: https://github.com/stretchr/testify)
 - to install :  "go get github.com/stretchr/testify" command
 - easy assertion
-    -> assert.Equal(t, Calculate(2), 4)
-    -> assert.NotEqual(t, Calculate(2), 5)
-    -> assert.Nil(status)
-    -> assert.NotNil(object)
+    - assert.Equal(t, Calculate(2), 4)
+    - assert.NotEqual(t, Calculate(2), 5)
+    - assert.Nil(status)
+    - assert.NotNil(object)
 - mockery provides the ability to easily generate mocks for golang interfaces using the stretchr/testify/mock package. 
     -> to install : go get github.com/vektra/mockery/.../
     -> to generate mock : mockery -name "interfaceToMock"
