@@ -47,6 +47,6 @@
     - assert.Nil(status)
     - assert.NotNil(object)
 - mockery provides the ability to easily generate mocks for golang interfaces using the stretchr/testify/mock package. 
-    -> to install : go get github.com/vektra/mockery/.../
-    -> to generate mock : mockery -name "interfaceToMock"
+    - to install : go get github.com/vektra/mockery/.../
+    - to generate mock : mockery -name "interfaceToMock"
 
