@@ -11,14 +11,18 @@
 
 # Some useful commands 
 ## Test commands 
+  ```go
 - go test
 - go test –v 
 - go test –run  "TestName"
+  ```
 
 ## Coverage commands &  Visualization 
+  ```go
 - go test –cover
 - go test –cover –coverprofile=c.out
 - tool cover –html=c.out –o coverage.html
+  ```
 
 ## Unit Testing
 ### Basic Test
@@ -40,13 +44,44 @@
 
 ### Assertion/Mocking
 - stretchr/testify  one of the most popular go testing library (link: https://github.com/stretchr/testify)
-- to install :  "go get github.com/stretchr/testify" command
+- to install : 
+  ```go
+    go get github.com/stretchr/testify
+  ```
 - easy assertion
-    - assert.Equal(t, Calculate(2), 4)
-    - assert.NotEqual(t, Calculate(2), 5)
-    - assert.Nil(status)
-    - assert.NotNil(object)
+    ```go
+    -> assert.Equal(t, Calculate(2), 4)
+    -> assert.NotEqual(t, Calculate(2), 5)
+    -> assert.Nil(status)
+    -> assert.NotNil(object)
+    ```
 - mockery provides the ability to easily generate mocks for golang interfaces using the stretchr/testify/mock package. 
-    - to install : go get github.com/vektra/mockery/.../
-    - to generate mock : mockery -name "interfaceToMock"
+    -> to install : 
+    ```go
+     go get github.com/vektra/mockery/.../
+    ```
+    -> to generate mock : 
+    ```bash
+     mockery -name "<interfaceToMock>"
+    ```
 
+### Ginkgo
+- Ginkgo builds on Go's testing package, allowing expressive Behavior-Driven Development ("BDD") style tests. 
+- It is typically (and optionally) paired with the Gomega matcher library.
+    -> to install ginkgo & gomega: 
+    ```go
+     go get github.com/onsi/ginkgo/ginkgo
+     go get github.com/onsi/gomega/...
+    ```
+- General format:
+```go
+        Describe("the strings package", func() {
+        Context("strings.Contains()", func() {
+            When("the string contains the substring in the middle", func() {
+            It("returns `true`", func() {
+                Expect(strings.Contains("Ginkgo is awesome", "is")).To(BeTrue())
+            })
+            })
+        })
+        })
+```
